@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 1rem;
+  text-align: center;
+  img {
+    width: 60px;
+    border-radius: 50%;
+  }
+  a {
+    button {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px grey;
+      transition: 0.2s ease all;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background: rgb(63, 62, 62);
+      color: white;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(1);
+      }
+    }
+  }
+}
