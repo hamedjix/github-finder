@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import './Search.scss';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
   state = {
     text: '',
   };
   static propTypes = {
-    onSearch: Proptypes.func.isRequired,
-    clearUsers: Proptypes.func.isRequired,
+    onSearch: PropTypes.func.isRequired,
+    clearUsers: PropTypes.func.isRequired,
+    showClear: PropTypes.bool.isRequired,
+    setAlert: PropTypes.func.isRequired,
   };
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.onSearch(this.state.text);
-    this.setState({ text: '' });
+    if (this.state.text === '') {
+      this.props.setAlert('Please Enter Something');
+    } else {
+      this.props.onSearch(this.state.text);
+      this.setState({ text: '' });
+    }
   };
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
