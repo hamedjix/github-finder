@@ -9,4 +9,16 @@
     width: 40px;
     margin: 10px;
   }
+  ul {
+    margin-left: auto;
+    li {
+      list-style: none;
+      display: inline-block;
+      a {
+        color: white;
+        padding: 0 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
 }

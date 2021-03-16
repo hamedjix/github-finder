@@ -6,6 +6,7 @@ import Users from './components/users/Users';
 import axios from 'axios';
 import Search from './components/users/Search';
 import Alert from './components/users/Alert';
+import About from './components/pages/About';
 
 class App extends Component {
   state = {
@@ -47,7 +48,8 @@ class App extends Component {
           <div className='container'>
             <Alert alert={this.state.alert} />
             <Switch>
-              <exact
+              <Route
+                exact
                 path='/'
                 render={(props) => (
                   <Fragment>
@@ -61,6 +63,7 @@ class App extends Component {
                   </Fragment>
                 )}
               />
+              <Route exact path='/about' component={About} />
             </Switch>
           </div>
         </div>
