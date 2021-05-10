@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import Spin from './spin.gif';
+import { Fragment } from 'react';
+import Spin from './spin.jpg';
 import './Spinner.scss';
 
 const Spinner = () => {

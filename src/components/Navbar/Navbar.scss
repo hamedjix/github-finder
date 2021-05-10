@@ -1,5 +1,10 @@
 .navbar {
-  background: rgb(87, 84, 84);
+  background: rgb(0, 119, 182);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 119, 182, 1) 0%,
+    rgba(2, 62, 138, 1) 100%
+  );
   color: white;
   display: flex;
   align-items: center;

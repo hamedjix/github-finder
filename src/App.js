@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Navbar title='Github Finder' />
+          <Navbar title='Github User Finder' />
           <div className='container'>
             <Alert alert={this.state.alert} />
             <Switch>
@@ -59,7 +59,10 @@ class App extends Component {
                       showClear={this.state.users.length > 0 ? true : false}
                       setAlert={this.setAlert}
                     />
-                    <Users users={this.state.users} />
+                    <Users
+                      loading={this.state.loading}
+                      users={this.state.users}
+                    />
                   </Fragment>
                 )}
               />

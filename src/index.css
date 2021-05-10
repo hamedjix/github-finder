@@ -1,3 +1,6 @@
+:root {
+  --primary: #023e8a;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,16 +9,49 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background: #caf0f8;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+input {
+  border-radius: 15px;
+  outline: none;
+  padding: 0.5em 1em;
+  transition: all 0.2s ease;
+  border: 2px solid var(--primary);
+  font-weight: bold;
+  font-size: 1rem;
+}
+input:focus {
+  box-shadow: 2px 2px 3px 1px var(--primary);
+}
+button {
+  background: var(--primary);
+  border-radius: 15px;
+  padding: 0.5em 1em;
+  color: white;
+  transition: all 0.5s ease;
+  border: 2px solid var(--primary);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  color: var(--primary);
+  background: white;
+  border: 2px solid var(--primary);
+}
+button:active {
+  background: var(--primary);
+  color: white;
+}
 a {
   text-decoration: none;
-  color: grey;
 }
-a:hover {
-  color: blue;
+a:visited,
+a:active {
+  color: white;
 }
