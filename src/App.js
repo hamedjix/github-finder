@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import Users from './components/users/Users';
+import User from './components/users/User';
 import axios from 'axios';
 import Search from './components/users/Search';
 import Alert from './components/users/Alert';
@@ -11,6 +12,7 @@ import About from './components/pages/About';
 class App extends Component {
   state = {
     users: [],
+    user: {},
     loading: false,
     alert: null,
   };
@@ -30,6 +32,16 @@ class App extends Component {
 
     this.setState({ users: response.data.items, loading: false });
   };
+  //Get User Details
+  getUser = async (username) => {
+    const response = await axios.get(
+      `https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    );
+
+    this.setState({ user: response.data, loading: false });
+    console.log(response.data);
+  };
+
   //Clear Users
   clearUsers = () => {
     this.setState({ users: [], loading: false });
@@ -66,7 +78,8 @@ class App extends Component {
                   </Fragment>
                 )}
               />
-              <Route exact path='/about' component={About} />
+              <Route path='/about' component={About} />
+              <Route path='/user' getUser={this.getUser} component={User} />
             </Switch>
           </div>
         </div>
